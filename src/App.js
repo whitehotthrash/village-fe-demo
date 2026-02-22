@@ -1,8 +1,9 @@
-import logo from "./logo.svg";
+//import logo from "./logo.svg";
 import "./App.css";
 import { WelcomePage } from "./pages/WelcomePage";
 import styled from "@emotion/styled";
 import fern from "./assets/fern.png";
+import logo from "./assets/logo.png";
 
 const brandColours = {
   lightGreen: "#f2ffe2",
@@ -37,6 +38,7 @@ function App() {
     <Page>
       <WelcomePage
         fern={fern}
+        logo={logo}
         gotham={gotham}
         robotoCondensed={robotoCondensed}
         lightGreen={lightGreen}
