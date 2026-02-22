@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
+import BasicMenu from "../components/BasicMenu";
 
 const fadeIn = keyframes`
   from {
@@ -8,6 +9,12 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
   }
+`;
+
+const MenuContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const HeaderContainer = styled.div`
@@ -20,11 +27,15 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderOne = styled.h1`
-  font-family: ${(props) => props?.gotham || ""};
+  display: flex;
+  flex-direction: column;
+  font-family: ${(props) => props?.robotoCondensed || ""};
   font-size: 30pt;
-  color: ${(props) => props?.darkGreen || ""};
-  //text-shadow: 2px 2px 2px ${(props) => props?.purple || ""};
+  color: ${(props) => props?.purple || ""};
+  text-shadow: 2px 2px 2px ${(props) => props?.appleGreen || ""};
   animation: ${fadeIn} 1.5s ease-in;
+  font-weight: 400;
+  padding-bottom: 5pt;
 `;
 
 const HeaderTwo = styled.h1`
@@ -102,9 +113,19 @@ export const WelcomePage = ({
 }) => {
   return (
     <>
+      <MenuContainer>
+        <BasicMenu />
+      </MenuContainer>
       <HeaderContainer gotham={gotham}>
-        <HeaderOne gotham={gotham} purple={purple} pink={pink} darkGreen={darkGreen}>
-          Welcome To
+        <HeaderOne
+          robotoCondensed={robotoCondensed}
+          gotham={gotham}
+          purple={purple}
+          pink={pink}
+          darkGreen={darkGreen}
+          appleGreen={appleGreen}
+        >
+          Welcome to
         </HeaderOne>
         <LogoContainer>
           <LogoImage src={logo} />
@@ -119,6 +140,7 @@ export const WelcomePage = ({
         >
           Wellness App
         </SubHeader> */}
+
       </HeaderContainer>
       <FooterImages>
         <ImageContainer>
